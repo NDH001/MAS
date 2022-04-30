@@ -1,0 +1,11 @@
+pandas
+yfinance
+numpy
+matplotlib
+torch
+torchvision
+scikit-learn
+scikit-fuzzy
+tweepy
+configparser
+google-cloud-language

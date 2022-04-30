@@ -1,0 +1,32 @@
+<div class="nav-item">
+
+    <div class="nav-depart">
+
+    </div>
+    <nav class="nav-menu mobile-menu">
+        <ul>
+            {% if page == 'control' %}
+            <li><a href="{{ url_for('index')}}">Dashboard</a></li>
+            <li class="active"><a href="{{ url_for('control_panel')}}">Control Panel</a>
+            </li>
+            <li><a href="{{ url_for('faq')}}">FAQ</a>
+
+            {% elif page == 'faq' %}
+            <li><a href="{{ url_for('index')}}">Dashboard</a></li>
+            <li><a href="{{ url_for('control_panel')}}">Control Panel</a>
+            </li>
+            <li class="active"><a href="{{ url_for('faq')}}">FAQ</a>
+
+            {% else %}
+            <li class="active"><a href="{{ url_for('index')}}">Dashboard</a>
+            </li>
+            <li><a href="{{ url_for('control_panel')}}">Control Panel</a>
+            </li>
+            <li><a href="{{ url_for('faq')}}">FAQ</a>
+            {% endif %}
+
+        </ul>
+    </nav>
+    <div id="mobile-menu-wrap"></div>
+
+</div>

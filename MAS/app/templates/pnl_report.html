@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="utf-8" />
+      <title>Home Page</title>
+      <link href="/static/styles.css" rel="stylesheet" />
+   </head>
+
+   <script>
+   window.setInterval("reloadIFrame();", 30000);
+   function reloadIFrame() {
+    document.getElementById("this_frame").src=this_frame.src;
+   }
+   </script>
+
+   <div class="container">
+
+      <iframe id="this_frame" width="85%" height="500px" src={{ weburl }}></iframe>
+      <div> Report view automatically refreshes every 30 seconds </div>
+      {% include "base/power_bi_button.html" %}
+   </div>
+
+   </body>
+</html>

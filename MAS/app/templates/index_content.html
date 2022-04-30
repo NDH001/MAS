@@ -1,0 +1,54 @@
+<!-- Hero Section Begin -->
+<section class="hero-section">
+
+    <div class="hero-items">
+
+        <div class="topbar-cover2">
+            <div class="desc">
+
+                <section class="cd-faq">
+
+                    <!-- Main Section Begin -->
+                    <section class="main-section spad">
+                        <div class="main-details-inner">
+                            <div class="blog-detail-title">
+                                {% if active %}
+                                    {% if mode == "Simulated" %}
+                                    <h2>PowerBI Report</h2>
+                                    {% include "pnl_report.html" %}
+                                    {% else %}
+                                    {% endif %}
+                                {% else %}
+                                    <h2>PowerBI Report</h2>
+                                    <div> Please run the MAS in 'Dashboard' tab to see powerBI dashboard.  </div>
+                                {% endif %}
+
+                            </div>
+                                <br>
+                            <div class="blog-detail-title">
+                                {% if active %}
+                                    {% if mode == "Simulated" %}
+                                    <h2>Broker Transactions</h2>
+                                    {% else %}
+                                    <h2>Advices</h2>
+                                    {% endif %}
+                                {% include "broker_transactions.html" %}
+                                {% else %}
+                                <h2>Broker Transactions</h2>
+                                    <div> Please run the MAS in 'Dashboard' tab to see broker transactions.  </div>
+                                {% endif %}
+
+                            </div>
+
+                        </div>
+                    </section>
+                    <!-- Main Section End -->
+
+                </section>
+
+            </div>
+        </div>
+        <!--</div>-->
+
+    </div>
+</section>

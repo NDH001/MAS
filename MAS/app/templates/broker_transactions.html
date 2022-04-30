@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="utf-8" />
+      <title>Home Page</title>
+      <link href="/static/styles.css" rel="stylesheet" />
+   </head>
+
+   <script>
+   window.setInterval("reloadIFrame();", 60000);
+   function reloadIFrame() {
+    document.getElementById("this_frame").src=this_frame.src;
+   }
+   </script>
+   <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="cart-table">
+                    <table>
+                        <thead>
+                        {% if mode == "Simulated" %}
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Action</th>
+                            <th>Price</th>
+                            <th>Order volume</th>
+                            <th>Actual Volume</th>
+                            <th>Cost(USD)</th>
+                            <th>Fill</th>
+                            <th>Time</th>
+                        </tr>
+                        {% for row in rows %}
+
+                        <tr>
+                            <td class="cart-pic"><h5>{{ row.symbol }}</h5></td>
+                            <td class="cart-pic"><h5>{{ row.action }}</h5></td>
+                            <td class="cart-pic"><h5>{{ row.price }}</h5></td>
+                            <td class="cart-pic"><h5>{{ row.req_volume }}</h5></td>
+                            <td class="cart-pic"><h5>{{ row.actual_volume }}</h5></td>
+                            <td class="cart-pic"><h5>{{ row.total }}</h5></td>
+                            <td class="cart-pic"><h5>{{ row.fill }}</h5></td>
+                            <td class="cart-pic"><h5>{{ row.time.strftime("%m/%d/%Y, %H:%M:%S") }}</h5></td>
+                        </tr>
+
+                        {% endfor %}
+                        {% else %}
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Action</th>
+                            <th>Price</th>
+                            <th>Volume</th>
+                            <th>Cost(USD)</th>
+                            <th>Time</th>
+                        </tr>
+
+                        {% for row in rows %}
+                        <tr>
+                            <td class="cart-pic"><h5>{{ row.symbol }}</h5></td>
+                            <td class="cart-pic"><h5>{{ row.action }}</h5></td>
+                            <td class="cart-pic"><h5>{{ row.price }}</h5></td>
+                            <td class="cart-pic"><h5>{{ row.volume }}</h5></td>
+                            <td class="cart-pic"><h5>{{ row.total }}</h5></td>
+                            <td class="cart-pic"><h5>{{ row.time.strftime("%m/%d/%Y, %H:%M:%S") }}</h5></td>
+                        </tr>
+
+                        {% endfor %}
+                        {% endif %}
+
+                        </thead>
+                        <tbody>
+                        <!--Insert rows here-->
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+   </body>
+</html>
+

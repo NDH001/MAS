@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Queseek">
+    <meta name="keywords" content="Queseek, quest, seek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Queseek</title>
+{% include "base/icon.html" %}
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themify-icons.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/elegant-icons.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nice-select.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery-ui.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slicknav.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css">
+</head>
+
+<body>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Header Section Begin -->
+<header class="header-section">
+
+    {% include "base/topbar.html" %}
+    {% include "base/menu.html" %}
+
+</header>
+
+<!-- Sign Up Section Begin -->
+<div class="normal-login-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+
+                <div class="normal-form">
+
+                    {% if page == 'home'%}
+                    <h2>SUBMIT A SEEK</h2>
+
+                    <div class="line"><h5>Want to report a lost item or list an errand instead?</h5>
+                        <a href="{{url_for('login')}}" class="orange-btn">Post Quest</a>
+                    </div>
+
+                    <form action="{{url_for('forms_seek')}}" method="post" class="comment-form">
+                        <div class="group-input">
+                            {{ form.item.label(class_="formlabelformat") }}
+                            {{ form.item(class_="form-style") }}
+                        </div>
+
+                        <div class="group-input">
+                            {{ form.location.label(class_="formlabelformat") }}
+                            {{ form.location(class_="form-style") }}
+                        </div>
+
+                        <div class="group-input">
+                            {{ form.description.label(class_="formlabelformat") }}
+                            {{ form.description(class_="comment-form") }}
+
+                        </div>
+
+
+                        {{ form.submit(class_="site-btn normal-btn") }}
+
+                    </form>
+
+
+                    {% else %}
+
+                    <h2>SUBMIT A QUEST</h2>
+
+                    <form action="{{url_for('forms')}}" method="post" class="comment-form">
+                        <div class="group-input">
+                            {{ form.type.label(class_="formlabelformat") }}
+                            {{ form.type(class_="form-style") }}
+                        </div>
+                        <div class="group-input">
+                            {{ form.item.label(class_="formlabelformat") }}
+                            {{ form.item(class_="form-style") }}
+                        </div>
+
+                        <div class="group-input">
+                            {{ form.location.label(class_="formlabelformat") }}
+                            {{ form.location(class_="form-style") }}
+                        </div>
+
+                        <div class="group-input">
+                            {{ form.description.label(class_="formlabelformat") }}
+                            {{ form.description(class_="comment-form") }}
+
+                        </div>
+
+                        {{ form.submit(class_="site-btn normal-btn") }}
+
+                    </form>
+
+                    {% endif %}
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Sign Up Form Section End -->
+
+
+
+<!-- Js Plugins -->
+<script src="{{url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery-ui.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.countdown.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.nice-select.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.zoom.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.dd.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.slicknav.js')}}"></script>
+<script src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
+</body>
+
+</html>

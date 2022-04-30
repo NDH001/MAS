@@ -1,0 +1,101 @@
+<!-- Hero Section Begin -->
+<section class="hero-section">
+
+    <div class="hero-items">
+
+        <div class="topbar-cover2">
+            <div class="desc">
+
+                <section class="cd-faq">
+
+                    <!-- Main Section Begin -->
+                    <section class="main-section spad">
+                        <div class="main-details-inner">
+                            <div class="blog-detail-title">
+                                <h2>Control Panel</h2>
+                                {% if active %}
+                                <form class="cpanel-form" action="" method="">
+                                    <div class="cpanel-container">
+                                        <label>MAS Status:</label>
+                                        <div class="cpanel-text">Running</div>
+                                    </div>
+                                    <div class="cpanel-container">
+                                        <label>Mode:</label>
+                                        <div class="cpanel-text">{{ par[0] }}</div>
+                                    </div>
+
+                                    <div class="cpanel-container">
+                                        <label>Initial Balance:</label>
+                                        <div class="cpanel-text">{{ par[1] }}</div>
+                                    </div>
+
+                                    <div class="cpanel-container">
+                                        <label>Limit for a single transaction:</label>
+                                        <div class="cpanel-text">{{ par[2] }}</div>
+                                    </div>
+
+                                    <div class="cpanel-container">
+                                        <label>Max Loss:</label>
+                                        <div class="cpanel-text">{{ par[3] }}%</div>
+                                    </div>
+
+                                    <div class="cpanel-container">
+                                        <label>Risk:</label>
+                                        <div class="cpanel-text">{{ par[4] }}</div>
+                                    </div>
+                                </form>
+
+                                {% else %}
+                                <form class="cpanel-form" action="" method="">
+                                    <div class="cpanel-container">
+                                        <label>MAS Status:</label>
+                                        <div class="cpanel-text">Not Running</div>
+                                    </div>
+                                </form>
+                                {% endif %}
+
+                                {% if active %}
+                                <form class="normal-form normal-form-active" action="{{url_for('control_panel')}}" method="post">
+                                    {{ form.submit(class_="site-btn normal-btn") }}
+                                </form>
+
+                                {% else %}
+                                <form class="normal-form" action="{{url_for('control_panel')}}" method="post">
+                                    <div class="group-input">
+                                        {{ form.mode.label(class_="formlabelformat") }}
+                                        {{ form.mode(class_="") }}
+                                    </div>
+
+                                    <div class="group-input">
+                                        {{ form.balance.label(class_="formlabelformat") }}
+                                        {{ form.balance(class_="") }}
+                                    </div>
+
+                                    <div class="group-input">
+                                        {{ form.limit.label(class_="formlabelformat") }}
+                                        {{ form.limit(class_="") }}
+                                    </div>
+
+                                    <div class="group-input">
+                                        {{ form.max_loss.label(class_="formlabelformat") }}
+                                        {{ form.max_loss(class_="") }}
+                                    </div>
+
+                                    <div class="group-input">
+                                        {{ form.risk.label(class_="formlabelformat") }}
+                                        {{ form.risk(class_="") }}
+                                    </div>
+
+                                    {{ form.submit(class_="site-btn normal-btn") }}
+
+                                </form>
+
+                                {% endif %}
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>

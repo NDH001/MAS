@@ -1,0 +1,29 @@
+<style>
+    .btn-center{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+</style>
+
+<script>
+function reloadIFrame() {
+document.getElementById("this_frame").src=this_frame.src;
+}
+</script>
+
+<div class="btn-center">
+    <div class="inline-div settings-btn">
+        <a href="" class="button" onclick="reloadIFrame()">Refresh</a>
+    </div>
+
+    <div class="inline-div settings-btn">
+         <a href="{{ weburl }}" class="button"
+         onclick="window.open('{{ weburl }}',
+                 'newwindow',
+                 'width=600,height=400');
+              return false;"
+         >Open PowerBI in new window</a>
+    </div>
+</div>
